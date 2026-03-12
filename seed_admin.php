@@ -2,7 +2,7 @@
 require_once __DIR__ . '/config/database.php';
 
 try {
-    $db = (new Database())->getConnection();
+    $db = (new Database())->connect();
 
     // Create users table if not exists
     $db->exec("CREATE TABLE IF NOT EXISTS users (
