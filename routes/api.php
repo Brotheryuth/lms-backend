@@ -22,7 +22,7 @@ function matchRoute(string $pattern, string $uri, array &$params = []): bool {
 $params = [];
 
 // ── SEED ADMIN (delete after use) ────────────────────────────
-if ($requestMethod === "GET" && $uri === "/api/seed") {
+if  ($requestMethod === "GET" && ($uri === "/api/seed" || $uri === "/seed")) {
     $db = (new Database())->connect();
     $db->exec("CREATE TABLE IF NOT EXISTS users (
         id SERIAL PRIMARY KEY,
